@@ -14,7 +14,9 @@ public class Expense {
     private String name;
     private Double amount;
 //    private LocalDateTime date;
-//    private Long userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private AppUser user;
 
 
 
@@ -42,4 +44,19 @@ public class Expense {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    public AppUser getUser() {
+        return user;
+    }
+
+    public void setUser(AppUser user) {
+        this.user = user;
+    }
+    //    public Long getUserId() {
+//        return userId;
+//    }
+//
+//    public void setUserId(Long userId) {
+//        this.userId = userId;
+//    }
 }
